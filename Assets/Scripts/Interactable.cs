@@ -9,10 +9,7 @@ public class Interactable : MonoBehaviour {
 
     public virtual void MoveToInteraction(NavMeshAgent playerAgent)
     {
-        if (gameObject.tag == "Enemy")
-        {
-            isEnemy = true;
-        }
+        isEnemy = gameObject.tag == "Enemy";
         hasInteracted = false;
         this.playerAgent = playerAgent;
         playerAgent.stoppingDistance = 3f;
