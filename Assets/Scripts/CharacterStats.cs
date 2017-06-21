@@ -1,20 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class CharacterStats : MonoBehaviour {
+public class CharacterStats {
     public List<BaseStat> stats = new List<BaseStat>();
 
-    void Start()
+    public CharacterStats(int power, int toughness, int attackSpeed)
     {
-        stats.Add(new BaseStat(4, "Power", "Your power level."));
-        stats.Add(new BaseStat(2, "Vitality", "Your vitality level."));
+        stats = new List<BaseStat>() {
+            new BaseStat(BaseStat.BaseStatType.Power, power, "Power"),
+            new BaseStat(BaseStat.BaseStatType.Toughness, toughness, "Toughness"),
+            new BaseStat(BaseStat.BaseStatType.AttackSpeed, attackSpeed, "Attack Speed")
+        };
+    }
+
+    public BaseStat GetStat(BaseStat.BaseStatType stat)
+    {
+        return this.stats.Find(x => x.StatType == stat);
     }
 
     public void AddStatBonus(List<BaseStat> statBonuses)
     {
         foreach(BaseStat statBonus in statBonuses)
         {
-            stats.Find(x=> x.StatName == statBonus.StatName).AddStatBonus(new StatBonus(statBonus.BaseValue));
+            GetStat(statBonus.StatType).AddStatBonus(new StatBonus(statBonus.BaseValue));
         }
     }
 
@@ -22,7 +30,7 @@ public class CharacterStats : MonoBehaviour {
     {
         foreach (BaseStat statBonus in statBonuses)
         {
-            stats.Find(x => x.StatName == statBonus.StatName).RemoveStatBonus(new StatBonus(statBonus.BaseValue));
+            GetStat(statBonus.StatType).RemoveStatBonus(new StatBonus(statBonus.BaseValue));
         }
     }
 }

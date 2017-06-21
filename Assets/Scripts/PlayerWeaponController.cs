@@ -12,7 +12,7 @@ public class PlayerWeaponController : MonoBehaviour {
     void Start()
     {
         spawnProjectile = transform.FindChild("ProjectileSpawn");
-        characterStats = GetComponent<CharacterStats>();
+        characterStats = GetComponent<Player>().characterStats;
     }
 
     public void EquipWeapon(Item itemToEquip)
