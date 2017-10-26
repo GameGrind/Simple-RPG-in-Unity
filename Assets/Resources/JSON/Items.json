@@ -3,12 +3,12 @@
     "objectSlug": "sword",
     "itemName": "Sword",
     "description": "A long, sharp blade.",
-    "itemType":  "Weapon",
+    "itemType": "Weapon",
     "actionName": "Equip",
     "itemModifier": 0,
     "Stats": [
       {
-        "StatType":  "Power",
+        "StatType": "Power",
         "BaseValue": 25,
         "StatName": "Power"
       },
@@ -18,9 +18,34 @@
         "StatName": "Tougness"
       },
       {
-        "StatType":  "AttackSpeed",
+        "StatType": "AttackSpeed",
         "BaseValue": 4,
-        "StatName": "Attack Speed"
+        "StatName": "Atk Spd"
+      }
+    ]
+  },
+  {
+    "objectSlug": "staff",
+    "itemName": "Cactus",
+    "description": "A long, sharp cactus.",
+    "itemType":  "Weapon",
+    "actionName": "Equip",
+    "itemModifier": 0,
+    "Stats": [
+      {
+        "StatType":  "Power",
+        "BaseValue": 800,
+        "StatName": "Power"
+      },
+      {
+        "StatType": "Toughness",
+        "BaseValue": 2,
+        "StatName": "Tougness"
+      },
+      {
+        "StatType":  "AttackSpeed",
+        "BaseValue": 1,
+        "StatName": "Atk Spd"
       }
     ]
   },

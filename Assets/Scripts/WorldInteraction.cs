@@ -2,11 +2,11 @@
 using System.Collections;
 
 public class WorldInteraction : MonoBehaviour {
-    NavMeshAgent playerAgent;
+    UnityEngine.AI.NavMeshAgent playerAgent;
 
     void Start()
     {
-        playerAgent = GetComponent<NavMeshAgent>();
+        playerAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
     void Update()

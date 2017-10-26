@@ -10,10 +10,10 @@ public class InventoryUIDetails : MonoBehaviour {
     public Text statText;
     void Start()
     {
-        itemNameText = transform.FindChild("Item_Name").GetComponent<Text>();
-        itemDescriptionText = transform.FindChild("Item_Description").GetComponent<Text>();
-        itemInteractButton = transform.FindChild("Button").GetComponent<Button>();
-        itemInteractButtonText = itemInteractButton.transform.FindChild("Text").GetComponent<Text>();
+        itemNameText = transform.Find("Item_Name").GetComponent<Text>();
+        itemDescriptionText = transform.Find("Item_Description").GetComponent<Text>();
+        itemInteractButton = transform.Find("Button").GetComponent<Button>();
+        itemInteractButtonText = itemInteractButton.transform.Find("Text").GetComponent<Text>();
         gameObject.SetActive(false);
     }
 
