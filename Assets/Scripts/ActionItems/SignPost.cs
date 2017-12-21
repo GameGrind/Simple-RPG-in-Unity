@@ -7,7 +7,5 @@ public class SignPost : ActionItem {
     {
         DialogueSystem.Instance.AddNewDialogue(dialogue, "Sign");
         Debug.Log("Interacting with sign post.");
-
-
     }
 }

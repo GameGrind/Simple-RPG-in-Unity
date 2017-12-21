@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour {
+    [SerializeField]
+    private Mesh spawnerMesh;
     public GameObject monster;
     public bool respawn;
     public float spawnDelay;
@@ -37,5 +39,12 @@ public class Spawner : MonoBehaviour {
         IEnemy instance = Instantiate(monster, transform.position, Quaternion.identity).GetComponent<IEnemy>();
         instance.Spawner = this;
         spawning = false;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawMesh(monster.GetComponent<MeshFilter>().sharedMesh, transform.position, Quaternion.identity, Vector3.one);
+        Gizmos.DrawIcon(transform.position, "Portal.png", true);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
 public class UIEventHandler : MonoBehaviour {
 
@@ -20,6 +21,14 @@ public class UIEventHandler : MonoBehaviour {
     public static void ItemAddedToInventory(Item item)
     {
         OnItemAddedToInventory(item);
+    }
+
+    public static void ItemAddedToInventory(List<Item> items)
+    {
+        foreach(Item item in items)
+        {
+            OnItemAddedToInventory(item);
+        }
     }
 
     public static void ItemEquipped(Item item)
