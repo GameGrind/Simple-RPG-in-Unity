@@ -10,14 +10,14 @@ public class DialogueSystem : MonoBehaviour {
     public List<string> dialogueLines = new List<string>();
 
     Button continueButton;
-    Text dialogueText, nameText;
+    TMPro.TextMeshProUGUI dialogueText, nameText;
     int dialogueIndex;
 
     // Use this for initialization
     void Awake () {
-        continueButton = dialoguePanel.transform.Find("Continue").GetComponent<Button>();
-        dialogueText = dialoguePanel.transform.Find("Text").GetComponent<Text>();
-        nameText = dialoguePanel.transform.Find("Name").GetChild(0).GetComponent<Text>();
+        continueButton = dialoguePanel.GetComponentInChildren<Button>();
+        dialogueText = dialoguePanel.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>();
+        nameText = dialoguePanel.transform.Find("Name").GetChild(0).GetComponentInChildren<TMPro.TextMeshProUGUI>();
         continueButton.onClick.AddListener(delegate { ContinueDialogue(); } );
         dialoguePanel.SetActive(false);
 

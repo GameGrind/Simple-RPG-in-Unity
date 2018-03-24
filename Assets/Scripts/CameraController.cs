@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using System.Collections;
 
 [ExecuteInEditMode]
@@ -17,7 +18,7 @@ public class CameraController : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetAxisRaw("Mouse ScrollWheel") != 0)
+        if (Input.GetAxisRaw("Mouse ScrollWheel") != 0 && !EventSystem.current.IsPointerOverGameObject())
         {
             float scroll = Input.GetAxis("Mouse ScrollWheel");
             playerCamera.fieldOfView -= scroll * zoomSpeed;

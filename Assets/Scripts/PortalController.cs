@@ -22,7 +22,7 @@ public class PortalController : MonoBehaviour {
         for(int i = 0; i < portals.Length; i++)
         {
             Button portalButton = Instantiate(button, panel.transform);
-            portalButton.GetComponentInChildren<Text>().text = portals[i].name;
+            portalButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = portals[i].name;
             int x = i;
             portalButton.onClick.AddListener(delegate { OnPortalButtonClick(x, portals[x]); });
         }

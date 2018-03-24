@@ -20,34 +20,42 @@ public class UIEventHandler : MonoBehaviour {
 
     public static void ItemAddedToInventory(Item item)
     {
-        OnItemAddedToInventory(item);
+        if (OnItemAddedToInventory != null)
+            OnItemAddedToInventory(item);
     }
 
     public static void ItemAddedToInventory(List<Item> items)
     {
-        foreach(Item item in items)
+        if (OnItemAddedToInventory != null)
         {
-            OnItemAddedToInventory(item);
+            foreach(Item item in items)
+            {
+                OnItemAddedToInventory(item);
+            }
         }
     }
 
     public static void ItemEquipped(Item item)
     {
-        OnItemEquipped(item);
+        if (OnItemEquipped != null)
+            OnItemEquipped(item);
     }
 
     public static void HealthChanged(int currentHealth, int maxHealth)
     {
-        OnPlayerHealthChanged(currentHealth, maxHealth);
+        if (OnPlayerHealthChanged != null)
+            OnPlayerHealthChanged(currentHealth, maxHealth);
     }
 
     public static void StatsChanged()
     {
-        OnStatsChanged();
+        if (OnStatsChanged != null)
+            OnStatsChanged();
     }
 
     public static void PlayerLevelChanged()
     {
-        OnPlayerLevelChange();
+        if (OnPlayerLevelChange != null)
+            OnPlayerLevelChange();
     }
 }

@@ -3,6 +3,8 @@ using System.Collections;
 
 public class WorldInteraction : MonoBehaviour {
     UnityEngine.AI.NavMeshAgent playerAgent;
+    [SerializeField]
+    private LayerMask interactLayer;
 
     void Start()
     {
@@ -21,7 +23,7 @@ public class WorldInteraction : MonoBehaviour {
     {
         Ray interactionRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit interactionInfo;
-        if (Physics.Raycast(interactionRay, out interactionInfo, Mathf.Infinity))
+        if (Physics.SphereCast(interactionRay, 1f, out interactionInfo, Mathf.Infinity, interactLayer))
         {
             playerAgent.updateRotation = true;
             GameObject interactedObject = interactionInfo.collider.gameObject;

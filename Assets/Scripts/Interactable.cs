@@ -13,18 +13,20 @@ public class Interactable : MonoBehaviour {
         hasInteracted = false;
         this.playerAgent = playerAgent;
         playerAgent.stoppingDistance = 3f;
-        playerAgent.destination = transform.position;
+        playerAgent.destination = GetTargetPosition();
+        EnsureLookDirection();
     }
 
     void Update()
     {
         if (!hasInteracted && playerAgent != null && !playerAgent.pathPending)
         {
+            playerAgent.destination = GetTargetPosition();
+            EnsureLookDirection();
             if (playerAgent.remainingDistance <= playerAgent.stoppingDistance)
             {
                 if (!isEnemy)
                     Interact();
-                EnsureLookDirection();
                 hasInteracted = true;
             }
         }
@@ -41,5 +43,10 @@ public class Interactable : MonoBehaviour {
     public virtual void Interact()
     {
         Debug.Log("Interacting with base class.");
+    }
+
+    private Vector3 GetTargetPosition()
+    {
+        return transform.position;
     }
 }

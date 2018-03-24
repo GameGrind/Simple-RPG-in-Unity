@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class InventoryUIItem : MonoBehaviour {
     public Item item;
 
-    public Text itemText;
+    public TMPro.TextMeshProUGUI itemText;
     public Image itemImage;
 
     public void SetItem(Item item)
