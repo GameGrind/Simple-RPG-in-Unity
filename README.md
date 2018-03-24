@@ -35,7 +35,7 @@ The questing system allows you to create custom quests and quest givers that can
 ![](https://i.imgur.com/bC6fz3y.gif)
 
 ### Teleportation System (extensible interaction system)
-The interactable system is used for enemies, NPCs (quest givers, dialogue guys, whatever), player movement, examining objects, and everything inbetween. As an example of it doing anything, here's a teleportation network using weird water fountains:
+The interactable system is used for enemies, NPCs (quest givers, dialogue guys, whatever), player movement, examining objects, and everything inbetween. As an example of it doing anything, here's a teleportation network using weird water wells:
 
 ![](https://i.imgur.com/BHatq8d.gif)
 
