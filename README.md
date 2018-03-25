@@ -1,4 +1,7 @@
 # Simple RPG in Unity
+
+[![GitHub release](https://img.shields.io/github/release/gamegrind/simple-rpg-in-unity.svg)](https://github.com/GameGrind/Simple-RPG-in-Unity/releases/tag/v1.0.0)
+
 Unity project for the Simple RPG series on GameGrind. If you have any questions please start a discussion on [the forum](http://forum.gamegrind.io/) and someone may be able to assist you!
 
 The Simple RPG is a very simple RPG built in Unity as part of a training course on Youtube ([here's the channel](http://www.youtube.com/gamegrind)). The RPG was designed to simply teach basic concepts of RPGs, while making a decently functioning game.
