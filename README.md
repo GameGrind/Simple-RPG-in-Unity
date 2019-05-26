@@ -6,7 +6,7 @@ Unity project for the Simple RPG series on GameGrind.
 
 The Simple RPG is a very simple RPG built in Unity as part of a training course on Youtube ([here's the channel](http://www.youtube.com/gamegrind)). The RPG was designed to simply teach basic concepts of RPGs, while making a decently functioning game.
 
-**I must point out that this isn't intended to be used as a base for a game or if you're hunting commercial success. This project was used to teach basic C# and Unity concepts and nothing more.**
+**This project was used as a way to teach the basics of programming in C# and building various systems in Unity. Not intended for a complete game, but that's up to you!**
 
 ## Systems and Mechanics
 Along the way we created various systems and mechanics for the game so I'll just list a few here.
